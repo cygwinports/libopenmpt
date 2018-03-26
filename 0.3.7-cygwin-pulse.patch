@@ -1,0 +1,11 @@
+--- origsrc/libopenmpt-0.3.7+release.autotools/configure.ac	2018-03-11 08:03:36.000000000 -0500
++++ src/libopenmpt-0.3.7+release.autotools/configure.ac	2018-03-16 02:04:32.918676500 -0500
+@@ -153,7 +153,7 @@ AM_CONDITIONAL([ENABLE_TESTS], [test "x$
+ AC_ARG_WITH([pulseaudio], AS_HELP_STRING([--with-pulseaudio], [Enable use of libpulse and libpulse-simple (enabled by default on Linux).]))
+ AS_IF([test "x$enable_openmpt123" != "xno"],[
+ case $host_os in
+- linux*)
++ linux*|cygwin*)
+ AS_IF([test "x$with_pulseaudio" != "xno"],
+  [
+   PKG_CHECK_MODULES([PULSEAUDIO], [libpulse libpulse-simple],
